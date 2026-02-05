@@ -1,0 +1,36 @@
+# Email Agent Configuration
+
+name: email_agent
+description: Agent for reading and managing emails
+
+# Chat Model
+chat_model:
+  provider: openai
+  model_name: gpt-4
+  temperature: 0.7
+  max_tokens: 2000
+
+# Memory
+memory:
+  type: buffer
+  max_messages: 50
+  max_tokens: 2000
+
+# Tools
+tools:
+  - read_inbox
+  - send_email
+
+# Execution
+max_iterations: 15
+stop_conditions: []
+
+# Metadata
+metadata:
+  agent_type: email
+  capabilities:
+    - read_inbox
+    - send_email
+    - chat
+  requires_approval:
+    - send_email

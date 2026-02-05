@@ -1,0 +1,40 @@
+# Document Agent Configuration
+
+name: document_agent
+description: Agent for processing and analyzing documents
+
+# Chat Model
+chat_model:
+  provider: anthropic
+  model_name: claude-3-sonnet-20240229
+  temperature: 0.5
+  max_tokens: 4000
+
+# Memory
+memory:
+  type: buffer
+  max_messages: 30
+  max_tokens: 3000
+
+# Tools
+tools:
+  - parse_pdf
+  - extract_text
+
+# Execution
+max_iterations: 20
+stop_conditions: []
+
+# Metadata
+metadata:
+  agent_type: document
+  capabilities:
+    - pdf_parsing
+    - text_extraction
+    - document_analysis
+  supported_formats:
+    - pdf
+    - txt
+    - docx
+    - html
+    - markdown

@@ -1,0 +1,35 @@
+# Financial Agent Configuration
+
+name: financial_agent
+description: Agent for fetching and analyzing financial data
+
+# Chat Model
+chat_model:
+  provider: openai
+  model_name: gpt-4
+  temperature: 0.0  # Deterministic for financial data
+  max_tokens: 1500
+
+# Memory
+memory:
+  type: ephemeral  # Stateless queries
+
+# Tools
+tools:
+  - fetch_market_data
+  - normalize_financials
+
+# Execution
+max_iterations: 10
+stop_conditions: []
+
+# Metadata
+metadata:
+  agent_type: financial
+  capabilities:
+    - market_data
+    - financial_analysis
+    - data_normalization
+  data_sources:
+    - yahoo_finance
+    - alpha_vantage
